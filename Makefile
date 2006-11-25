@@ -12,8 +12,6 @@
 PREFIX	:=/opt/all-misc
 BINDIR	=${PREFIX}/bin
 
-TEMPLATES:=$(wildcard t_*)
-
 TARGETS	=all clean distclean clobber check install uninstall tags
 TARGET	=all
 
@@ -40,7 +38,7 @@ check::	all-misc
 
 install:: all-misc
 	install -d ${BINDIR}
-	install -c -s all-misc ${BINDIR}/
+	install -c all-misc ${BINDIR}/
 
 uninstall::
 	${RM} ${BINDIR}/all-misc
