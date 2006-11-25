@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+for x in ${*:-*}
+do
+	bn=$(basename "${x}")
+	c=$(echo "${bn}" | cut -c1 | tr '[A-Z]' '[a-z]')
+	d="/nfs/multimedia/pics/misc/${c}"
+	${DEBUG} mkdir -p "${d}"
+	${DEBUG} dow "${x}" "${d}/"
+done
